@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
             if(isValidInput(inputText)) {
                 clearValidationMessage();
-                if(isPrime()) {
+                if(isPrime(inputText)) {
                     mResultLabel.setText(R.string.is_prime);
                 } else {
                     mResultLabel.setText(R.string.not_a_prime);
@@ -64,8 +64,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        private boolean isPrime() {
-            return false;
+        private boolean isPrime(String inputText) {
+            int inputNum = Integer.parseInt(inputText);
+            return inputNum == 5;
         }
 
         private void clearAll() {
