@@ -3,8 +3,8 @@
     <string name="input_hint_text">Enter a natural number</string>
     <string name="check_prime_btn_text">Check Prime</string>
     <string name="delete_btn_text">Clear</string>
-    <string name="required_validation_message">This field is required.</string>
-    <string name="not_a_number_validation_message">Enter a number</string>
     <string name="not_a_natural_number_validation_message">Enter a natural number</string>
     <string name="empty_string"></string>
+    <string name="is_prime">Is a prime number</string>
+    <string name="not_a_prime">Is NOT a prime number</string>
 </resources>
