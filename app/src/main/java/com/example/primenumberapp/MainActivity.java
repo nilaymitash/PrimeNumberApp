@@ -1,7 +1,9 @@
 package com.example.primenumberapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -55,8 +57,10 @@ public class MainActivity extends AppCompatActivity {
                 clearValidationMessage();
                 if(isPrime(inputText)) {
                     mResultLabel.setText(R.string.is_prime);
+                    mResultLabel.setTextColor(Color.GREEN);
                 } else {
                     mResultLabel.setText(R.string.not_a_prime);
+                    mResultLabel.setTextColor(Color.BLUE);
                 }
                 mResultLabel.setVisibility(View.VISIBLE);
             } else {
@@ -66,7 +70,17 @@ public class MainActivity extends AppCompatActivity {
 
         private boolean isPrime(String inputText) {
             int inputNum = Integer.parseInt(inputText);
-            return inputNum == 5;
+            if (inputNum < 2) {
+                return false;
+            }
+
+            for (int i = 2, max = (int)Math.sqrt(inputNum); i <= max; i++) {
+                if (inputNum % i == 0) {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         private void clearAll() {
